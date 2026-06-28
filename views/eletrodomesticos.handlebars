@@ -1,0 +1,87 @@
+<header>
+
+    <h1>Aqua<span>Power</span></h1>
+
+    <nav class="abas">
+
+        <a href="/eletrodomesticos" class="ativa">
+            Equipamentos
+        </a>
+
+        <a href="/equipamentos-ocultos">
+            Equipamentos Ocultos
+        </a>
+
+    </nav>
+
+</header>
+
+<main>
+
+    <section class="titulo">
+
+        <h2>Equipamentos</h2>
+
+        <p>
+            Consulte o consumo médio de água e energia dos principais eletrodomésticos.
+        </p>
+
+    </section>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Equipamento</th>
+
+                <th>Categoria</th>
+
+                <th>Energia</th>
+
+                <th>Água</th>
+
+                <th>Ação</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {{#each equipamentos}}
+
+            <tr>
+
+                <td>{{nome}}</td>
+
+                <td>{{categoria}}</td>
+
+                <td>{{consumoEnergia}} kWh/mês</td>
+
+                <td>{{consumoAgua}} L/mês</td>
+
+                <td>
+
+                    <form action="/ocultar/{{id}}" method="POST">
+
+                        <button class="ocultar">
+
+                            Ocultar
+
+                        </button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+
+            {{/each}}
+
+        </tbody>
+
+    </table>
+
+</main>
